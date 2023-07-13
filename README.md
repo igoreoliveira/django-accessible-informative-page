@@ -1,0 +1,1 @@
+# django-accessible-informative-page
