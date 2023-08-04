@@ -2,9 +2,9 @@ from django.contrib import admin
 from . import models
 
 
-admin.site.register(models.Block)
-class BlockInline(admin.TabularInline):
+class BlockInline(admin.StackedInline):
     model = models.Block
+    ordering = ['order']
 
 
 @admin.register(models.Page)
