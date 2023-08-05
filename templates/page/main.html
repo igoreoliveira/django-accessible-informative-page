@@ -1,35 +1,44 @@
 {% load static %}
-<html>
-<head>
-    <title>{% block title %}{% endblock %}</title>
-</head>
-<body>
-  
-  <h1> {{ page.title }} </h1>
-  
-  {% for block in blocks %}
-    {% if block.title %}
-      <h2>{{block.title}}</h2>
-    {% endif %}
-    {% if block.text %}
-      <p lang='pt-br'>{{ block.text }}</p>
-    {% endif%}
-    {% if block.image %}
-      <img src="{{block.image.url}}" width="600px"
-	   alt="{{block.image_alt_text}}"/>
-    {% endif %}
-  {% endfor %}
 
-  <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
-    </div>
-  </div>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>
-    new window.VLibras.Widget('https://vlibras.gov.br/app');
-  </script>
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
   
-</body>
+    <h1> {{ page.title }} </h1>
+  
+    {% for block in blocks %}
+      {% if block.title %}
+        <h2>{{block.title}}</h2>
+      {% endif %}
+      {% if block.text %}
+        <p lang='pt-br'>{{ block.text }}</p>
+      {% endif%}
+      {% if block.image %}
+        <img src="{{block.image.url}}" width="600px"
+	     alt="{{block.image_alt_text}}"/>
+      {% endif %}
+    {% endfor %}
+
+
+    {# VLibras plugin #}
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+	<div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+  
+  </body>
 </html>
