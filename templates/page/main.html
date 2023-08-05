@@ -31,7 +31,7 @@
           {% endif%}
           {% if block.image %}
 	    <div class="image-container">
-              <img src="{{block.image.url}}" width="600px"
+              <img src="data:image/png;base64,{{ block.image_base64 }}" width="600px"
 	           alt="{{block.image_alt_text}}"/>
 	    </div>
           {% endif %}
