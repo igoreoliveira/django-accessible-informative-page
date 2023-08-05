@@ -9,6 +9,7 @@ class Page (models.Model):
     
 class Block(models.Model):
     title = models.TextField(null=True, blank=True, verbose_name='Título')
+    subtitle = models.TextField(null=True, blank=True, verbose_name='Subtítulo')
     text = models.TextField(null=True, blank=True, verbose_name='Texto')
     page = models.ForeignKey(Page, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="assets", null=True,blank=True, verbose_name='Imagem')

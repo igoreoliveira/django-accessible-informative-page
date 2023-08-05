@@ -25,7 +25,7 @@ h1 {
 /* Defina a cor de fundo do h1 */
 h2 {
   font-size: 20px;
-  font-weight: 700;  
+  font-weight: 800;  
   background-color: $highlight-bg-color; /* Substitua pela cor desejada */
   color: $section-title-color; /* Cor do texto */
   padding: 10px; /* Espaçamento interno (opcional) */
@@ -43,6 +43,13 @@ h2::before, h1::before {
   top: 50%; /* Alinhar ao meio verticalmente */
   margin-top: -50px; /* A metade da altura (altura/2) negativa para centralizar verticalmente */
   z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo do h1 */
+}
+
+h3 {
+  color: $section-text-color;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
 }
 
 p {
