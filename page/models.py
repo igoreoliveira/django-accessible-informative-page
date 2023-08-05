@@ -3,6 +3,7 @@ from django.db import models
 class Page (models.Model):
     slug = models.SlugField(null=False, blank=False)
     title = models.TextField(null=False, blank=True, verbose_name='Título da página')
+    style_css = models.TextField(null=False, blank=True, verbose_name='Estilo em CSS')
     def __str__(self):
         return self.slug
     
