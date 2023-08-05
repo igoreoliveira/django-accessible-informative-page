@@ -181,3 +181,8 @@ flycheck_*.el
 
 # directory configuration
 .dir-locals.el
+
+#Frontend files
+frontend/node_modules
+frontend/package-lock.json
+frontend/static
