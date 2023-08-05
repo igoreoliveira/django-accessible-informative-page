@@ -12,9 +12,11 @@ def page(request, slug):
 
 
 def download_page(request, slug):
-    page_url = reverse('page', args=[slug])
-
-    page_content = redirect(page_url).content
+    page = Page.objects.get(slug=slug)
+    context = {"blocks": page.block_set.all().order_by('order'),
+               "page": page}
+    page_content = render (request, "page/main.html", context)
+    
     response = HttpResponse(page_content, content_type='text/html')
     response['Content-Disposition'] = 'attachment; filename="pagina-acessivel.html"'
 
