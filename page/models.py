@@ -30,17 +30,13 @@ class Block(models.Model):
 def convert_image_to_base64(sender, instance, **kwargs):
     for block in instance.block_set.all():
         if block.image:
-            # Abre a imagem
             image = Image.open(block.image.path)
             
-            # Cria um buffer em memória para guardar a imagem codificada em Base64
             buffer = io.BytesIO()
             image.save(buffer, format='PNG')
             
-            # Codifica a imagem em Base64
             image_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
 
-            # Salva a representação Base64 no campo do modelo
             block.image_base64 = image_base64
             block.save()
     

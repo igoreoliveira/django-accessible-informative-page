@@ -3,6 +3,7 @@ $main-background-color: #F8F8F8;
 
 $highlight-bg-color: #F2EDF7;
 $section-title-color: #9C0719;
+$section-subtitle-color: #f0f0f0;
 
 $section-text-color: #0047AB;
 
@@ -50,6 +51,7 @@ h3 {
   font-size: 18px;
   font-weight: 700;
   text-align: center;
+  background-color: $section-subtitle-color;
 }
 
 p {
